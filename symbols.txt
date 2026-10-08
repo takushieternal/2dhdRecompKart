@@ -1,0 +1,14 @@
+; Symbol names applied by tools/disasm.py. Format: <CPU address> <name>   (; comments)
+; Add names here as routines get understood; regenerate with tools/disasm.py.
+80FF70 Vector_Reset
+80FF85 Vector_NMI
+80FF8A Vector_IRQ
+80FF8F Vector_COP
+808000 NMI_Handler
+80801F IRQ_Handler
+80803A Boot
+808056 MainLoop
+80805C MainLoop_WaitForNMI
+808197 GameModeTable          ; JSR (GameModeTable,X), X = $36 (game mode * 2)
+81F98C DSP1_Raster            ; DSP-1 cmd $0A: per-scanline Mode 7 matrix stream
+81F9E4 DSP1_Parameter         ; DSP-1 cmd $02: camera setup

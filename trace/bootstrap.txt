@@ -1,0 +1,68 @@
+# Builds the savestates the coverage campaigns start from (deterministic from power-on).
+400
+save title
+# --- 1P Time Trial: character select, then course select
+tap Start
+60
+tap Up
+30
+tap B
+60
+tap Down
+30
+tap B
+60
+tap B
+60
+tap B
+150
+save tt_char
+tap B
+30
+tap B
+240
+save tt_course
+# --- 1P Mario Kart GP, 50cc, Mushroom Cup, at the starting grid
+load title
+tap Start
+60
+tap Up
+30
+tap B
+60
+tap B
+60
+tap B
+60
+tap B
+120
+tap B
+30
+tap B
+240
+tap B
+200
+save gp_start
+# --- 2P Battle mode, course select
+load title
+tap Start
+60
+tap B
+60
+tap Down
+20
+tap Down
+20
+tap B
+60
+tap B
+120
+tap B
+p2 6 B
+30
+p2 6 B
+120
+tap B
+120
+save battle_sel
+shot bootstrap_end

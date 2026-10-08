@@ -1,0 +1,14 @@
+Shared build: no game data inside
+=================================
+This archive contains only the project's own code, tools and docs. Nothing from Super Mario Kart is
+included: no ROM, no disassembly (asm/), no generated C (recomp/gen/), no traces, no save data.
+
+bin/win/smkplay.exe and smktrace.exe here are INTERPRETER builds (they run your ROM's original code).
+To get the recompiled build from your own ROM (Super Mario Kart (USA), CRC32 CD80DB86):
+
+  1. python trace\run_coverage.py smk.sfc            (coverage campaigns -> asm\ + byte-identical check)
+  2. python tools\recomp.py smk.sfc trace\out recomp\gen --symbols symbols.txt
+  3. make -C emu win   (mingw-w64 + SDL2), or make -C emu on Linux/WSL
+  4. python tools\verify_recomp.py smk.sfc           (optional: lockstep check vs the interpreter)
+
+Play: put smk.sfc next to bin\win\smkplay.exe and run it. See README.md.
